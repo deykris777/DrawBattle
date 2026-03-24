@@ -114,20 +114,6 @@ Please ensure your code adheres to our coding standards and includes relevant te
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Contact
 
-If you have any questions or suggestions, feel free to reach out to the project maintainers:
-
-- **SANOJ** - [panditsanoj124@gmail.com](mailto:panditsanoj124@gmail.com)
-- GitHub: [techysanoj](https://github.com/techysanoj)
-- **Tushar Sharu** - tusharsharu2809@gmail.com
-- GitHub: [tusharsharu](https://github.com/Tusharsharu)
-- **Shashwat Bindal** - shashwat.bindal2002@gmail.com
-- GitHub: [shashwat282002](https://github.com/shashwat282002)
-- **Priyanshu Bhardwaj** - priyanshubhardwaj70@gmail.com
-- GitHub: [PriyanshuA1507](https://github.com/PriyanshuA1507)
-- **Shashwat Aggarwal** - shashwatagg04@gmail.com
-- GitHub: [ShashwatAgg0411](https://github.com/ShashwatAgg0411)
----
 
 Thank you for visiting **Skribblay.you**! We hope you enjoy playing and contributing to the project.
