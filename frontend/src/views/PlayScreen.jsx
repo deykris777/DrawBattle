@@ -45,9 +45,17 @@ function PlayScreen() {
     const newSocket = io.connect(window.location.hostname === "localhost"
     ? ENDPOINT_LOCAL
     : ENDPOINT, );
-    // console.log(newSocket);
+    
+    newSocket.on("connect", () => {
+        console.log("socket strictly connected, sending user data");
+        let userdata = {
+            username: userDataRecieved.username,
+            avatar: userDataRecieved.avatar
+        };
+        newSocket.emit("recieve-user-data", userdata);
+    });
+
     setSocket(newSocket);
-    // newSocket.emit("player-joined",newSocket.id)
 
     window.onbeforeunload=()=>{
       localStorage.removeItem("username");
@@ -70,20 +78,7 @@ function PlayScreen() {
     }
   }, [socket]);
 
-  useEffect(()=>{
-    if(socket){
-      socket.on("send-user-data",()=>{
-        console.log("sending user data")
-        let userdata= {
-          username: userDataRecieved.username,
-          avatar: userDataRecieved.avatar
-        }
-        socket.emit("recieve-user-data",userdata)
-      })
-    }
-
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[socket])
+  // Wait for passive trigger removed to fix race condition
 
   useEffect(() => {
     if (socket) {
