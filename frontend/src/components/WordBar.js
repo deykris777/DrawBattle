@@ -24,7 +24,7 @@ const UrgeWithPleasureComponent = () => (
   </CountdownCircleTimer>
 );
 
-const WordBar = ({ showClock, wordLen, gameStarted, showWords, currentUserDrawing, selectedWord }) => {
+const WordBar = ({ showClock, wordLen, wordHint, gameStarted, showWords, currentUserDrawing, selectedWord }) => {
   // eslint-disable-next-line no-unused-vars
   const [key, setKey] = useState(0);
 
@@ -88,7 +88,7 @@ const WordBar = ({ showClock, wordLen, gameStarted, showWords, currentUserDrawin
       <>
         <div style={{ fontWeight: 'bold', fontSize: '24px', fontFamily: 'Comic Sans MS', color: '#000' }}>{`${currentUserDrawing?"Draw":showWords?"Choosing":"GUESS THIS"}`}</div>
 
-        <div style={{ fontWeight: 'bold', fontSize: '24px', fontFamily: 'Comic Sans MS', color: '#000' }}>{`${currentUserDrawing && selectedWord?selectedWord.toUpperCase():showWords?"":"_ ".repeat(wordLen)}`}</div>
+        <div style={{ fontWeight: 'bold', fontSize: '24px', fontFamily: 'Comic Sans MS', color: '#000', letterSpacing: '4px' }}>{`${currentUserDrawing && selectedWord?selectedWord.toUpperCase():showWords?"":wordHint}`}</div>
         </>
         }
       </div>

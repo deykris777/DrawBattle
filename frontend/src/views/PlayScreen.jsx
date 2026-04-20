@@ -29,6 +29,7 @@ function PlayScreen() {
   const [selectedWord, setSelectedWord] = useState(null);
   const [showClock, setShowClock] = useState(false);
   const [wordLen, setWordLen] = useState(0);
+  const [wordHint, setWordHint] = useState("");
   const [guessedWord, setGuessedWord] = useState(false);
   const navigate = useNavigate()
   const location = useLocation()
@@ -196,6 +197,9 @@ function PlayScreen() {
       socket.on("word-len", (wl) => {
         console.log("selected word length", wl);
         setWordLen(wl);
+      });
+      socket.on("word-hint", (hintStr) => {
+        setWordHint(hintStr);
       });
     }
   }, [socket]);
@@ -539,6 +543,7 @@ function PlayScreen() {
           <WordBar
             showClock={showClock}
             wordLen={wordLen}
+            wordHint={wordHint}
             gameStarted={gameStarted}
             showWords={showWords}
             currentUserDrawing={currentUserDrawing}

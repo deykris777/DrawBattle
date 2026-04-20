@@ -185,13 +185,40 @@ io.on("connection", (socket) => {
   });
 
 
+  const generateHint = (w) => {
+    if (!w) return "";
+    const len = w.length;
+    let hintArr = Array(len).fill("_");
+    
+    let numHints;
+    if (len <= 4) numHints = Math.min(1, len);
+    else if (len <= 7) numHints = 2;
+    else numHints = 3;
+    
+    let indices = new Set();
+    let attempts = 0;
+    while(indices.size < numHints && attempts < 50) {
+      let rand = Math.floor(Math.random() * len);
+      if (w[rand] !== " " && w[rand] !== "-") { 
+          indices.add(rand);
+      }
+      attempts++;
+    }
+    
+    for (let idx of indices) {
+      hintArr[idx] = w[idx].toUpperCase();
+    }
+    
+    return hintArr.join(" ");
+  };
+
   socket.on("word-select",(w)=>{
     word=w
     let wl=w.length
+    let hintStr = generateHint(w)
     io.emit("word-len", wl)
+    io.emit("word-hint", hintStr)
     startDraw()
-
-
   })
 
   socket.on("disconnect", (reason) => {
