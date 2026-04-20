@@ -42,7 +42,7 @@ function PlayScreen() {
       navigate("/")
       return;
     }
-    const newSocket = io.connect(process.env.REACT_APP_NODE_ENV === "production"
+    const newSocket = io.connect(process.env.NODE_ENV === "production"
     ? ENDPOINT
     : ENDPOINT_LOCAL, );
     // console.log(newSocket);
