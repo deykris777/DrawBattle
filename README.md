@@ -4,7 +4,7 @@ Welcome to **DrawBattle**, a fun and engaging online multiplayer drawing and gue
 
 ## Live Demo
 
-[Click Here](https://skribblay-you.onrender.com/)  (Note: Deployment URL remains the same for now)
+[Click Here]()  (Note: Deployment URL remains the same for now)
 
 > 💡 Open the link in **two separate tabs** to experience multiplayer mode (you’ll be joined together).
 
