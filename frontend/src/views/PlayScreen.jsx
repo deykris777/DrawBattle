@@ -42,9 +42,9 @@ function PlayScreen() {
       navigate("/")
       return;
     }
-    const newSocket = io.connect(process.env.NODE_ENV === "production"
-    ? ENDPOINT
-    : ENDPOINT_LOCAL, );
+    const newSocket = io.connect(window.location.hostname === "localhost"
+    ? ENDPOINT_LOCAL
+    : ENDPOINT, );
     // console.log(newSocket);
     setSocket(newSocket);
     // newSocket.emit("player-joined",newSocket.id)
