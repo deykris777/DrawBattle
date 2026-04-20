@@ -590,11 +590,12 @@ function PlayScreen() {
               )}
             </div>
           </div>
-          <div className="w-[300px] h-[540px] border border-black flex flex-col-reverse rounded-b-lg p-1">
+          <div className="w-[300px] h-[540px] border border-black bg-white flex flex-col-reverse rounded-b-lg p-2 overflow-y-auto">
             <form
               onSubmit={(e) => {
                 handleSubmitForm(e);
               }}
+              className="w-full mt-2"
             >
               <input
                 value={inputMessage}
